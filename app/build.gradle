@@ -26,14 +26,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    compile 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'com.loopj.android:android-async-http:1.4.9'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     //shape of view
     implementation 'com.github.florent37:shapeofview:1.4.7'
     //glide
     implementation 'com.github.bumptech.glide:glide:4.10.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
-
+    implementation 'androidx.cardview:cardview:1.0.0'
 
 
 }

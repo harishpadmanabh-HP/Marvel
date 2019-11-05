@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:layout_margin="40dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.github.florent37.shapeofview.shapes.ArcView
         android:id="@+id/arcView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="287dp"
+        android:layout_height="605dp"
         android:elevation="4dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,14 +21,21 @@
 
         <ImageView
             android:id="@+id/displaypic"
-            android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            android:scaleType="centerCrop">
 
         </ImageView>
 
-
+        <TextView
+            android:id="@+id/dispname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="50sp"
+            android:padding="10dp"
+            android:text="Dispaly name"
+            android:textColor="#fff"
+            android:textSize="25dp" />
 
 
         <!-- YOUR CONTENT -->
@@ -39,17 +47,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.48974007" />
+        app:layout_constraintGuide_percent="0.94" />
 
-    <TextView
-        android:id="@+id/dispname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="50sp"
-        android:padding="10dp"
-        android:text="Dispaly name"
-        android:textColor="#fff"
-        android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

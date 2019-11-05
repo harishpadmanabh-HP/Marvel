@@ -31,6 +31,7 @@ import cz.msebera.android.httpclient.Header;
 public class MainActivity extends AppCompatActivity implements Configs {
     JSONArray jarray;
     JSONObject jobject;
+    AsyncHttpClient client;
     RequestParams params;
     ArrayList<String> name;
     ArrayList<String>bio;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements Configs {
         setContentView(R.layout.activity_main);
 
         //init
-        AsyncHttpClient client = new AsyncHttpClient();
+         client = new AsyncHttpClient();
         params = new RequestParams();
         //init array list
         name = new ArrayList<>();
@@ -62,6 +63,13 @@ public class MainActivity extends AppCompatActivity implements Configs {
         recyclerView=findViewById(R.id.rv);
 
 
+        getdataFromApi();
+
+
+
+    }
+
+    private void getdataFromApi() {
 
         client.get(BASE_URL + API_ENDPOINT, params, new JsonHttpResponseHandler() {
             @Override
@@ -97,24 +105,22 @@ public class MainActivity extends AppCompatActivity implements Configs {
 
 
                     }
-                    
-                    
+
+
                     setupRecyclerView(recyclerView,MainActivity.this,
-                                      name,bio,imageurl);
-                    
+                            name,bio,imageurl);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
 
         });
-
-
     }
 
     private void setupRecyclerView(RecyclerView recyclerView, Context context, ArrayList<String> name, ArrayList<String> bio, ArrayList<String> imageurl) {
         LinearLayoutManager verticalLayoutmanager
-                = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
+                = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(verticalLayoutmanager);
 
         recyclerView.setAdapter(new MarvelAdapter(name,bio,imageurl,MainActivity.this));
